@@ -6,6 +6,7 @@ import img from "@/assets/1218021-1.jpg";
 import "swiper/css";
 
 export default function Home() {
+
   return (
     <main className="container">
       <div className="carusel-bg">
