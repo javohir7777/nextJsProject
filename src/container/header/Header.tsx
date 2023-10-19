@@ -3,7 +3,7 @@ import Link from "next/link";
 import "./Header.scss";
 const Header = () => {
   return (
-    <header className="container">
+    <header className="container sticky-top">
       <nav>
         <div className="nav-brand">
           <Link href="">Logo</Link>

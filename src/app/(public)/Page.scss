@@ -1,0 +1,42 @@
+.carusel-bg {
+  margin-top: 30px;
+  background-color: #ffffff86;
+  padding: 35px 30px 35px 30px;
+  border-radius: 10px;
+  .text-center {
+    font-weight: 500;
+    font-size: 25px;
+  }
+}
+.todos {
+  .category {
+    margin-top: 20px;
+    background-color: #ffffff86;
+    padding: 20px 30px 20px 30px;
+    border-radius: 10px;
+    .text-center {
+      font-weight: 500;
+      font-size: 20px;
+    }
+  }
+}
+
+.todos-img {
+  margin-top: 10px;
+  background-color: #ffffff86;
+  padding: 35px 30px 35px 30px;
+  border-radius: 10px;
+  .row {
+    .col-12 {
+      .card {
+        background-color: #ffffff86;
+        padding: 10px;
+        .btn {
+          margin-top: 10px;
+          background-color: #ffffff57;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
