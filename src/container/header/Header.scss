@@ -7,26 +7,45 @@
   margin-top: 30px;
   //   height: 70px;
   border-radius: 10px;
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    .antd-icon {
+      display: none;
+      font-size: 25px;
+    }
+  }
   .nav-menu {
     display: flex;
     gap: 30px;
   }
 }
-.nav-active {
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 35px 30px 35px 30px;
-  margin-top: 30px;
-  border-radius: 10px;
+.bg-dark {
+  border-radius: 0 0 10px 10px;
 }
 
 @media only screen and (max-width: 768px) {
   .container {
     max-width: 100%;
     nav {
-      display: grid;
+      display: block;
+      .nav-brand {
+        justify-content: space-between;
+        .antd-icon {
+          display: block;
+          float: right;
+        }
+      }
+      .nav-menu {
+        display: block;
+        padding: 10px 0 0 0;
+        .nav-menu__item {
+          padding: 0 20px 0 0;
+        }
+      }
+      .nav-menu__none {
+        display: none;
+      }
     }
   }
 }
@@ -38,6 +57,9 @@
         padding: 35px 0 0 0;
         display: grid;
         align-items: start;
+      }
+      .nav-menu__none {
+        display: none;
       }
     }
   }

@@ -4,9 +4,14 @@ import Link from "next/link";
 
 import "./Header.scss";
 import { useEffect, useState } from "react";
-import { log } from "console";
+import { PicRightOutlined } from "@ant-design/icons";
 const Header = () => {
   const [bgHeader, setBgHeader] = useState(false);
+  const [hamburger, setHamburger] = useState(false);
+
+  const openHamburger = () => {
+    setHamburger(!hamburger);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,18 +24,34 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
+  console.log(hamburger);
+
   return (
     <header className="container sticky-top">
       <nav className={bgHeader ? "nav bg-dark" : "nav"}>
         <div className="nav-brand">
           <Link href="">Logo</Link>
+          <PicRightOutlined
+            className="antd-icon"
+            onClick={() => openHamburger()}
+          />
         </div>
-        <div className="nav-menu">
-          <Link href="/">Home</Link>
-          <Link href="/about">Biz haqimizda</Link>
-          <Link href="/contact">Aloqa</Link>
-          <Link href="/history">Buyrutma tarixi</Link>
-          <Link href="/logout">Chiqish</Link>
+        <div className={hamburger ? "nav-menu" : "nav-menu nav-menu__none"}>
+          <Link className="nav-menu__item" href="/">
+            Home
+          </Link>
+          <Link className="nav-menu__item" href="/about">
+            Biz haqimizda
+          </Link>
+          <Link className="nav-menu__item" href="/contact">
+            Aloqa
+          </Link>
+          <Link className="nav-menu__item" href="/history">
+            Buyrutma tarixi
+          </Link>
+          <Link className="nav-menu__item" href="/logout">
+            Chiqish
+          </Link>
         </div>
       </nav>
     </header>
