@@ -12,7 +12,7 @@ const ProductsRow = ({ loading, products }: ProductsRowProps) => {
     <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols- gap-10">
       {loading ? (
         <div>
-          <h1>Loading...</h1>
+          <h1 className="text-white">Loading...</h1>
         </div>
       ) : (
         products.map((product) => (

@@ -1,5 +1,6 @@
 "use client";
 import ProductCard from "@/components/card/ProductCard";
+import Search from "@/components/search/Search";
 import ProductsRow from "@/components/shares/ProductsRow";
 import requist from "@/server";
 import categoryTypes from "@/types/category";
@@ -53,6 +54,7 @@ const Page = () => {
 
   return (
     <section className="container">
+      <Search setFilteredProducts={setProducts} />
       <h1 className="text-center my-3">Products:{total}</h1>
 
       <select

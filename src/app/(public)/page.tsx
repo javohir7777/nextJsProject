@@ -7,12 +7,13 @@ import "./Page.scss";
 import "swiper/css";
 import categoryTypes from "@/types/category";
 import Link from "next/link";
+import Search from "@/components/search/Search";
+import { useState } from "react";
 
 const Home = async () => {
   try {
     const { data } = await requist.get<categoryTypes[]>("category");
     console.log(data);
-
     return (
       <main className="container">
         <div className="carusel-bg">
