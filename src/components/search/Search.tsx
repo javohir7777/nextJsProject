@@ -3,6 +3,8 @@ import ProductsType from "@/types/product";
 
 const Search = ({ setFilteredProducts }: ProductsType) => {
   const handleSearch = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    // console.log(e.target.value);
+
     try {
       const {
         data: { products },

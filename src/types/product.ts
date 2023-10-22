@@ -13,5 +13,5 @@ interface ProductsType {
   category: categoryTypes;
   createdAt: string;
   updatedAt: string;
- }
+}
 export default ProductsType;

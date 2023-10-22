@@ -1,6 +1,7 @@
 import ProductsType from "@/types/product";
 import React from "react";
 import ProductCard from "../card/ProductCard";
+import Loading from "../laoding/Loading";
 
 interface ProductsRowProps {
   loading?: boolean;
@@ -9,10 +10,10 @@ interface ProductsRowProps {
 
 const ProductsRow = ({ loading, products }: ProductsRowProps) => {
   return (
-    <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols- gap-10">
+    <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
       {loading ? (
         <div>
-          <h1 className="text-white">Loading...</h1>
+          <Loading />
         </div>
       ) : (
         products.map((product) => (

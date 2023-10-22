@@ -9,6 +9,7 @@ import categoryTypes from "@/types/category";
 import Link from "next/link";
 import Search from "@/components/search/Search";
 import { useState } from "react";
+import Carusel from "@/components/carusel/Carusel";
 
 const Home = async () => {
   try {
@@ -18,7 +19,7 @@ const Home = async () => {
       <main className="container">
         <div className="carusel-bg">
           <h1 className="text-center">Yangi maxsulot</h1>
-          
+          <Carusel />
         </div>
         <div className="todos">
           <div className="category">
