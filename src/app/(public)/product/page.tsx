@@ -1,6 +1,6 @@
 "use client";
 import ProductCard from "@/components/card/ProductCard";
-import Search from "@/components/search/Search";
+// import Search from "@/components/search/Search";
 import ProductsRow from "@/components/shares/ProductsRow";
 import requist from "@/server";
 import categoryTypes from "@/types/category";
