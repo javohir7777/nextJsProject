@@ -1,4 +1,5 @@
 import ProductsType from "@/types/product";
+import { Grenze } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -6,7 +7,10 @@ import React from "react";
 const ProductCard = ({ title, image, price, _id }: ProductsType) => {
   return (
     // <div key={_id} className="col-12 col-sm-6 col-md-4 col-lg-3">
-    <div className="card">
+    <div
+      className="card"
+      style={{ backgroundColor: "#ffffffa2", padding: "10px" }}
+    >
       <div className="relative" style={{ height: "200px" }}>
         <Image
           className="card-img"
@@ -17,9 +21,11 @@ const ProductCard = ({ title, image, price, _id }: ProductsType) => {
           fill
         />
       </div>
-      <span className="bg-red rounded-[4px] px-4 py-2">{price}-sum</span>
+      <span className="bg-red rounded-[4px] px-4 py-2">
+        {price}-so{"'"}m
+      </span>
       {/* <button> */}
-      <Link className="btn mb-2" href={`/product/${_id}`}>
+      <Link className="btn btn-dark mb-2" href={`/product/${_id}`}>
         {title}
       </Link>
       {/* </button> */}

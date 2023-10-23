@@ -7,8 +7,7 @@ import "./Page.scss";
 import "swiper/css";
 import categoryTypes from "@/types/category";
 import Link from "next/link";
-import Search from "@/components/search/Search";
-import { useState } from "react";
+// import Search from "@/components/search/Search";
 import Carusel from "@/components/carusel/Carusel";
 
 const Home = async () => {

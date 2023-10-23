@@ -72,7 +72,10 @@ const Carusel = () => {
                     fill
                   />
                 </div>
-                <Link href="/dqwd" className="carusel-text">
+                <Link
+                  href={`/product/${product?._id}`}
+                  className="carusel-text"
+                >
                   {product?.title}
                 </Link>
               </div>
