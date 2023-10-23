@@ -54,7 +54,7 @@ const Page = () => {
 
   return (
     <section className="container">
-      <Search setFilteredProducts={setProducts} />
+      {/* <Search setFilteredProducts={setProducts} /> */}
       <h1 className="text-center my-3">Products:{total}</h1>
 
       <select
