@@ -1,11 +1,31 @@
 "use client";
 
 import React from "react";
+import { useAppDispatch } from "@/redux/hooks";
+import { setCookie } from "cookies-next";
+import { setIsAuthenticated } from "@/redux/slices/authSlice";
+import { ECCOMMERCE_TOKEN } from "@/constants";
+import requist from "@/server";
 
 const Login = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(e.target);
+  const dispatch = useAppDispatch();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    try {
+      e.preventDefault();
+
+      const userData = {
+        username: e.currentTarget.username.value,
+        password: e.currentTarget.password.value,
+      };
+      const {
+        data: { accesstoken, user },
+      } = await requist.post("auth/login", userData);
+      setCookie(ECCOMMERCE_TOKEN, accesstoken);
+      console.log(accesstoken);
+      dispatch(setIsAuthenticated(true));
+    } finally {
+    }
   };
 
   return (
