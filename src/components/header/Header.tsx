@@ -37,11 +37,11 @@ const Header = () => {
         </div>
         <div className={hamburger ? "nav-menu" : "nav-menu nav-menu__none"}>
           <Navlink href="/">Home</Navlink>
-          <Navlink href="/about">Biz haqimizda</Navlink>
           <Navlink href="/product">Product</Navlink>
           {/* <Navlink href="/logout">Chiqish</Navlink> */}
           <Navlink href="/contact">Aloqa</Navlink>
           <Navlink href="/history">Buyrutma tarixi</Navlink>
+          <Navlink href="/login">Login</Navlink>
         </div>
       </nav>
     </header>
