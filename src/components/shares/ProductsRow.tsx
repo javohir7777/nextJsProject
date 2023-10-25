@@ -10,15 +10,15 @@ interface ProductsRowProps {
 
 const ProductsRow = ({ loading, products }: ProductsRowProps) => {
   return (
-    <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
+    <div>
       {loading ? (
-        <div>
-          <Loading />
-        </div>
+        <Loading />
       ) : (
-        products.map((product) => (
-          <ProductCard key={product._id} {...product} />
-        ))
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
+          {products.map((product) => (
+            <ProductCard key={product._id} {...product} />
+          ))}
+        </div>
       )}
     </div>
   );

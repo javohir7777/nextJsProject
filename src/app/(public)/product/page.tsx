@@ -30,6 +30,7 @@ const Page = () => {
         );
         const { data } = await requist.get("category");
         setCategories(data);
+        // setLoading(false);
 
         setProducts(products);
         setTotal(total);

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   UserAddOutlined,
   MenuFoldOutlined,
@@ -16,12 +16,21 @@ const { Header, Sider, Content } = Layout;
 
 import "./AdminLayout.scss";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
+import { useAppSelector } from "@/redux/hooks";
+import ROLES from "@/types/roles";
 const AdminHeader = ({ children }: childrenType) => {
   const location = usePathname();
   console.log(location);
-
   const [collapsed, setCollapsed] = useState(false);
+
+  const { isAuthenticated, role } = useAppSelector((state) => state.auth);
+  useEffect(() => {
+    if (!isAuthenticated || ROLES.ADMIN !== role) {
+      redirect("/login");
+    }
+  }, [isAuthenticated, role]);
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();

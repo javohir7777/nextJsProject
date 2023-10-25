@@ -3,8 +3,8 @@
 import React from "react";
 import { useAppDispatch } from "@/redux/hooks";
 import { setCookie } from "cookies-next";
-import { setIsAuthenticated } from "@/redux/slices/authSlice";
-import { ECCOMMERCE_TOKEN } from "@/constants";
+import { setIsAuthenticated, setRole } from "@/redux/slices/authSlice";
+import { ECCOMMERCE_ROLE, ECCOMMERCE_TOKEN } from "@/constants";
 import requist from "@/server";
 
 const Login = () => {
@@ -22,8 +22,11 @@ const Login = () => {
         data: { accesstoken, user },
       } = await requist.post("auth/login", userData);
       setCookie(ECCOMMERCE_TOKEN, accesstoken);
-      console.log(accesstoken);
+      setCookie(ECCOMMERCE_ROLE, user.role);
+
       dispatch(setIsAuthenticated(true));
+      dispatch(setRole(user.role));
+      
     } finally {
     }
   };

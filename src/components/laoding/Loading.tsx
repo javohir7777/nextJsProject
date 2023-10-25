@@ -4,7 +4,7 @@ import loading from "../../assets/loading.svg";
 
 const Loading = () => {
   return (
-    <div className="d-flex align-items-center justify-content-center">
+    <div className="d-flex justify-content-center align-items-center">
       <Image
         src={loading}
         alt="Picture of the author"
